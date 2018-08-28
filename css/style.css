@@ -489,7 +489,7 @@ CLEAR AFTER FLOATS
 BUTTON DEFAULTS
 ***************/
 .button, .button-secondary, .button-tertiary, .button__outline {
-  background-color: seagreen;
+  background-color: rgb(64, 68, 66);
   display: inline-block;
   position: relative;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
@@ -507,7 +507,7 @@ BUTTON DEFAULTS
   .button:hover, .button-secondary:hover, .button-tertiary:hover, .button__outline:hover, .button:focus, .button-secondary:focus, .button-tertiary:focus, .button__outline:focus {
     color: #fff;
     text-decoration: none;
-    background-color: #21653f; }
+    background-color: #a2a8a5; }
   .button:active, .button-secondary:active, .button-tertiary:active, .button__outline:active {
     top: 1px; }
 
@@ -523,10 +523,10 @@ BUTTON DEFAULTS
 
 .button__outline {
   background-color: transparent;
-  border: 3px solid seagreen;
-  color: seagreen; }
+  border: 3px solid rgb(64, 68, 66);
+  color: rgb(64, 68, 66); }
   .button__outline:hover {
-    background-color: seagreen;
+    background-color: rgb(64, 68, 66);
     color: #fff; }
 
 /***************
@@ -545,7 +545,7 @@ input[type=text], input[type=email], input[type=phone], input[type=password], in
   width: 300px;
   margin-bottom: .5rem; }
   input[type=text]:focus, input[type=email]:focus, input[type=phone]:focus, input[type=password]:focus, input[type=number]:focus, input[type=search]:focus, textarea:focus {
-    border: 1px solid seagreen; }
+    border: 1px solid rgb(64, 68, 66); }
   input[type=text].full-width, input[type=email].full-width, input[type=phone].full-width, input[type=password].full-width, input[type=number].full-width, input[type=search].full-width, textarea.full-width {
     width: 100%; }
 
@@ -704,9 +704,9 @@ img, video, audio, iframe, object {
 LINK STYLING
 ***************/
 a {
-  color: seagreen; }
+  color: rgb(64, 68, 66); }
   a:hover {
-    color: #1b5233; }
+    color: #a2a8a5; }
 
 /***************
 MENU STYLING
@@ -970,11 +970,11 @@ FOOTER STYLING
           width: 100%;
           height: 100%; }
           .footer-links ul li a svg .outer-shape {
-            fill: seagreen; }
+            fill: rgb(64, 68, 66); }
           .footer-links ul li a svg .inner-shape {
             fill: white; }
       .footer-links ul li:hover a svg .outer-shape {
-        fill: #21653f; }
+        fill: #a2a8a5; }
 
 /***************
 PAGINATION STYLING

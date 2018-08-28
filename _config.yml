@@ -1,0 +1,28 @@
+title: Blog
+description: Blog for Electronics | Embedded | Software | Firmware
+
+url: https://github.com/Farogh007/Blog
+baseurl: ""
+paginate_path: "blog/page:num/"
+permalink: blog/:title/
+
+markdown: kramdown
+highlighter: rouge
+gems: [jekyll-paginate]
+paginate: 5
+
+navigation:
+ - title: Home
+   url: /index.html
+ - title: About
+   url: /about
+ - title: Contact
+   url: /contact
+
+social:
+   github: Farogh007
+   twitter: 
+   facebook: farogh.iftekhar
+   email: farogh007@gmail.com
+
+google_analytics: "UA-58263416-1"

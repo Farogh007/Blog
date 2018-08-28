@@ -2,7 +2,7 @@ title: Blog
 description: Blog for Electronics | Embedded | Software | Firmware
 
 url: https://farogh007.github.io/Blog
-baseurl: ""
+baseurl: "/Blog/#"
 paginate_path: "blog/page:num/"
 permalink: blog/:title/
 

@@ -1,8 +1,8 @@
-title: Blog
-description: Blog for Electronics | Embedded | Software | Firmware
+title: Long Haul
+description: Long Form Jekyll theme built with SASS / COMPASS / SUSY
 
-url: https://farogh007.github.io/Blog
-baseurl: "/Blog/#"
+url: https://farogh007.github.io/Blog/
+baseurl: ""
 paginate_path: "blog/page:num/"
 permalink: blog/:title/
 
@@ -20,9 +20,9 @@ navigation:
    url: /contact
 
 social:
-   github: Farogh007
-   twitter: 
-   facebook: farogh.iftekhar
-   email: farogh007@gmail.com
+   github: brianmaierjr
+   twitter: brianmaierjr
+   facebook: brianmaierjr
+   email: brimaidesigns@gmail.com
 
 google_analytics: "UA-58263416-1"

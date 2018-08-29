@@ -27,12 +27,12 @@
     {% endif %}
     {% if page.date %}
       <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
-      <meta content="{{ site.url }}/Blog/about/" property="article:author">
+      <meta content="{{ site.url }}/about/" property="article:author">
     {% endif %}
     {% if page.image %}
-      <meta content="{{ site.url }}/Blog/assets/img/{{ page.image }}" property="og:image">
+      <meta content="{{ site.url }}/assets/img/{{ page.image }}" property="og:image">
     {% else %}
-      <meta content="{{ '/Blog/assets/img/touring.jpg' | prepend: site.url }}" property="og:image">
+      <meta content="{{ '/assets/img/touring.jpg' | prepend: site.url }}" property="og:image">
     {% endif %}
 
     <!-- Twitter Cards -->
@@ -53,14 +53,14 @@
       <meta name="twitter:description" content="{{ site.description }}">
     {% endif %}
     {% if page.image %}
-      <meta name="twitter:image:src" content="{{ site.url }}/Blog/assets/img/{{ page.image }}">
+      <meta name="twitter:image:src" content="{{ site.url }}/assets/img/{{ page.image }}">
     {% else %}
-      <meta name="twitter:image:src" content="{{ '/Blog/assets/img/touring.jpg' | prepend: site.url }}">
+      <meta name="twitter:image:src" content="{{ '/assets/img/touring.jpg' | prepend: site.url }}">
     {% endif %}
 
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ "/Blog/assets/img/favicon.ico" | prepend: site.baseurl }}" />
+    <link rel="icon" type="image/x-icon" href="{{ "/assets/img/favicon.ico" | prepend: site.baseurl }}" />
 
     <!-- Come and get me RSS readers -->
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
@@ -71,7 +71,7 @@
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
     <!-- Modernizr -->
-    <script src="{{ "/Blog/assets/js/modernizr.custom.15390.js" | prepend: site.baseurl }}" type="text/javascript"></script>
+    <script src="{{ "/assets/js/modernizr.custom.15390.js" | prepend: site.baseurl }}" type="text/javascript"></script>
 
     {% if site.google_analytics %} {% include google_analytics.html %} {% endif %}
 </head>

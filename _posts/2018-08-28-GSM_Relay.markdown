@@ -14,7 +14,6 @@ Here i will help you to design your own GSM-Sim800 and relay based module to con
 #### GSM SIM800
 
 <img src="{{ '/assets/img/Sim800.jpg' | prepend: site.baseurl }}" alt="">  
-
 SIM800 is a complete Quad-band GSM/GPRS solution in a SMT type which can be embedded in any applications.
 
 SIM800 support Quad-band 850/900/1800/1900MHz, it can transmit Voice, SMS and data information with low power consumption. With tiny size of 24x24x3mm,Featuring Bluetooth and Embedded AT.
@@ -37,7 +36,7 @@ Example : If you want to control your coffee maker with a simple Microcontroller
 
 <img src="{{ '/assets/img/Relay.gif' | prepend: site.baseurl }}" alt=""> 
 
-A normal SPDT DC relay have 5 pins, COM | NC | NO | and a coil. Normally when no Voltage is applied on the relay coil NC (normally connected) pin and COM (Common) are in contact, when a DC voltage is applied according to desired rating of relay on it's coil a movable armature consist of spring support moves and NO (normally Open) pin are now in contact with COM. You can connect your load between COM pin and NO pin.
+A normal SPDT DC relay have 5 pins, COM NC NO and a coil. Normally when no Voltage is applied on the relay coil NC (normally connected) pin and COM (Common) are in contact, when a DC voltage is applied according to desired rating of relay on it's coil a movable armature consist of spring support moves and NO (normally Open) pin are now in contact with COM. You can connect your load between COM pin and NO pin.
 
 For more details, please refer [this][Relay] blog on relays.
 

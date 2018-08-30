@@ -35,7 +35,6 @@ A Relay is a electromechanical switch to control (open and close) any circuit. I
 Example : If you want to control your coffee maker with a simple Microcontroller, you can simply connect a relay and give digital commands.
 
 <img src="{{ '/assets/img/Relay.gif' | prepend: site.baseurl }}" alt=""> 
-
 A normal SPDT DC relay have 5 pins, COM NC NO and a coil. Normally when no Voltage is applied on the relay coil NC (normally connected) pin and COM (Common) are in contact, when a DC voltage is applied according to desired rating of relay on it's coil a movable armature consist of spring support moves and NO (normally Open) pin are now in contact with COM. You can connect your load between COM pin and NO pin.
 
 For more details, please refer [this][Relay] blog on relays.
@@ -44,7 +43,6 @@ For more details, please refer [this][Relay] blog on relays.
 #### Wiring to Atmega328
 
 We will be using Software serial for interfacing the Sim800 Gsm module with Atmega328.
-
 * Rx of module is connected with D2 pin
 * Tx of module is connected with D3 pin
 * Reset of module is connected with D4 pin

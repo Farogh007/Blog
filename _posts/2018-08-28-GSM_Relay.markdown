@@ -13,11 +13,11 @@ Here i will help you to design your own GSM-Sim800 and relay based module to con
 
 #### GSM SIM800
 
-<img src="{{ '/assets/img/Sim800.jpg' | prepend: site.baseurl }}" alt="">  SIM800 is a complete Quad-band GSM/GPRS
+<img src="{{ '/assets/img/Sim800.jpg' | prepend: site.baseurl }}" alt="">  
 
- solution in a SMT type which can be embedded in any applications.
+SIM800 is a complete Quad-band GSM/GPRS solution in a SMT type which can be embedded in any applications.
 
-SIM800 support Quad-band 850/900/1800/1900MHz, it can transmit Voice, SMS and data information with low power consumption. With tiny size of 24*24*3mm,Featuring Bluetooth and Embedded AT.
+SIM800 support Quad-band 850/900/1800/1900MHz, it can transmit Voice, SMS and data information with low power consumption. With tiny size of 24x24x3mm,Featuring Bluetooth and Embedded AT.
 
 
 ##### General Features
@@ -34,7 +34,9 @@ SIM800 support Quad-band 850/900/1800/1900MHz, it can transmit Voice, SMS and da
 A Relay is a electromechanical switch to control (open and close) any circuit. It is mainly used to control any circuit automatically using small Dc voltage to drive high voltage devices.
 
 Example : If you want to control your coffee maker with a simple Microcontroller, you can simply connect a relay and give digital commands.
+
 <img src="{{ '/assets/img/Relay.gif' | prepend: site.baseurl }}" alt=""> 
+
 A normal SPDT DC relay have 5 pins, COM | NC | NO | and a coil. Normally when no Voltage is applied on the relay coil NC (normally connected) pin and COM (Common) are in contact, when a DC voltage is applied according to desired rating of relay on it's coil a movable armature consist of spring support moves and NO (normally Open) pin are now in contact with COM. You can connect your load between COM pin and NO pin.
 
 For more details, please refer [this][Relay] blog on relays.
@@ -59,4 +61,4 @@ For more details, please refer the [schematics][Sch_GSM]. Download [Eagle][Eagle
 
 [Sch_GSM]: https://github.com/Farogh007/Projects/blob/master/EMBEDDED_PROJECTS/GSM_RELAY_MODULE/EAGLE_FILE/Schematic.pdf
 [Relay]: https://www.electronics-tutorials.ws/io/io_5.html
-Eagle_GSM: https://github.com/Farogh007/Projects/tree/master/EMBEDDED_PROJECTS/GSM_RELAY_MODULE/EAGLE_FILE
+[Eagle_GSM]: https://github.com/Farogh007/Projects/tree/master/EMBEDDED_PROJECTS/GSM_RELAY_MODULE/EAGLE_FILE

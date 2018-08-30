@@ -5,7 +5,8 @@ date:   2018-08-28
 description: Design your own GSM-Sim800 & Relay based module to control your home appliances.
 ---
 
-<p class="intro"><span class="dropcap">Y</span>ou must have interfaced so many modules with arduino for your projects but ever have thought of designing your own custom  module?.</Br>
+<p class="intro"><span class="dropcap">Y</span>ou must have interfaced so many modules with arduino for your projects but ever have thought of designing your own custom  module?
+
 Here i will help you to design your own GSM-Sim800 and relay based module to control your home appliances. I have used Atmel Atmega328 Microcontrollor which is being used in Arduino UNO.
 </p>
 
@@ -15,17 +16,17 @@ SIM800 is a complete Quad-band GSM/GPRS solution in a SMT type which can be embe
 
 SIM800 support Quad-band 850/900/1800/1900MHz, it can transmit Voice, SMS and data information with low power consumption. With tiny size of 24*24*3mm,Featuring Bluetooth and Embedded AT.
 
-<div style="display: flex; flex-direction: row;">
+<div style="display: flex; flex-direction: row-reverse;">
 <div>
-<dl>
-  <dt>General Features</dt>
-  <dd>Quad-band 850/900/1800/1900MHz</dd>
-  <dd>GPRS multi-slot class 12/10</dd>
-  <dd>GPRS mobile station class B</dd>
-  <dd>Bluetooth: compliant with 3.0+EDR</dd>
-  <dd>Control via AT commands</dd>
-  <dd>Supply voltage range 3.4 ~ 4.4V</dd>
-</dl>
+
+##### General Features
+* Quad-band 850/900/1800/1900MHz
+* GPRS multi-slot class 12/10
+* GPRS mobile station class B
+* Bluetooth: compliant with 3.0+EDR
+* Control via AT commands
+* Supply voltage range 3.4 ~ 4.4V
+
 </div>
 <div>
 <img src="{{ '/assets/img/Sim800.jpg' | prepend: site.baseurl }}" alt="">   
@@ -35,29 +36,24 @@ SIM800 support Quad-band 850/900/1800/1900MHz, it can transmit Voice, SMS and da
 #### What is Relay?
 
 A Relay is a electromechanical switch to control (open and close) any circuit. It is mainly used to control any circuit automatically using small Dc voltage to drive high voltage devices.
+
 Example : If you want to control your coffee maker with a simple Microcontroller, you can simply connect a relay and give digital commands.
 
-<div style="display: flex; flex-direction: row;">
-<div>
+<img src="{{ '/assets/img/Relay.gif' | prepend: site.baseurl }}" alt=""> 
+
 A normal SPDT DC relay have 5 pins, COM | NC | NO | and a coil. Normally when no Voltage is applied on the relay coil NC (normally connected) pin and COM (Common) are in contact, when a DC voltage is applied according to desired rating of relay on it's coil a movable armature consist of spring support moves and NO (normally Open) pin are now in contact with COM. You can connect your load between COM pin and NO pin.
 For more details, please refer [this][Relay] blog on relays.
-</div>
-<div>
-<img src="{{ '/assets/img/Relay.gif' | prepend: site.baseurl }}" alt="">   
-</div>
-</div>
+
 
 #### Wiring to Atmega328
 
 We will be using Software serial for interfacing the Sim800 Gsm module with Atmega328.
 
-<dl>
-  <dd>Rx of module is connected with D2 pin</dd>
-  <dd>Tx of module is connected with D3 pin</dd>
-  <dd>Reset of module is connected with D4 pin</dd>
-  <dd>Relay Status led is connected with D6 pin</dd>
-  <dd>Relay is connected with D7 pin</dd>
-</dl>
+* Rx of module is connected with D2 pin
+* Tx of module is connected with D3 pin
+* Reset of module is connected with D4 pin
+* Relay Status led is connected with D6 pin
+* Relay is connected with D7 pin
 
 For more details, please refer the [schematics][Sch_GSM]. Download [Eagle][Eagle_GSM] Files!
 
@@ -66,6 +62,6 @@ For more details, please refer the [schematics][Sch_GSM]. Download [Eagle][Eagle
 
 
 
-[Sch_GSM]: https://github.com/Farogh007/Projects/blob/master/EMBEDDED_PROJECTS/GSM_RELAY_MODULE/EAGLE_FILE/Schematic.pdf
+[Eagle_GSM]: https://github.com/Farogh007/Projects/blob/master/EMBEDDED_PROJECTS/GSM_RELAY_MODULE/EAGLE_FILE/Schematic.pdf
 [Relay]: https://www.electronics-tutorials.ws/io/io_5.html
 

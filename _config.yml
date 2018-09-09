@@ -3,6 +3,8 @@ description: Blog for Electronics | Embeeded | Firmware | Software
 
 url: https://farogh007.github.io
 baseurl: "/Blog"
+#url: http://localhost:4000/
+#baseurl: ""
 paginate_path: "blog/page:num/"
 permalink: blog/:title/
 

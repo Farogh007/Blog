@@ -1,14 +1,14 @@
 ---
 layout: post
-title:  "Controling home appliances using SMS."
+title:  "Controlling home appliances using SMS."
 date:   2018-08-28
 description: Design your own GSM-Sim800 & Relay based module to control your home appliances.
 ---
 
-<p class="intro"><span class="dropcap">Y</span>ou must have interfaced so many modules with arduino for your projects but ever have thought of designing your own custom  module?
+<p class="intro"><span class="dropcap">Y</span>ou must have interfaced so many modules with Arduino for your projects but ever have thought of designing your own custom module?
 </p>
 <p class="intro">
-Here i will help you to design your own GSM-Sim800 and relay based module to control your home appliances. I have used Atmel Atmega328 Microcontrollor which is being used in Arduino UNO.
+Here I will help you to design your own GSM-Sim800 and relay-based module to control your home appliances. I have used Atmel Atmega328 Microcontroller which is being used in Arduino UNO.
 </p>
 
 #### GSM SIM800
@@ -16,7 +16,7 @@ Here i will help you to design your own GSM-Sim800 and relay based module to con
 <img src="{{ '/assets/img/Sim800.jpg' | prepend: site.baseurl }}" alt="">  
 SIM800 is a complete Quad-band GSM/GPRS solution in a SMT type which can be embedded in any applications.
 
-SIM800 support Quad-band 850/900/1800/1900MHz, it can transmit Voice, SMS and data information with low power consumption. With tiny size of 24x24x3mm,Featuring Bluetooth and Embedded AT.
+SIM800 support Quad-band 850/900/1800/1900MHz, it can transmit Voice, SMS and data information with low power consumption. With tiny size of 24x24x3mm, Featuring Bluetooth and Embedded AT.
 
 
 ##### General Features
@@ -30,15 +30,34 @@ SIM800 support Quad-band 850/900/1800/1900MHz, it can transmit Voice, SMS and da
 
 #### What is Relay?
 
-A Relay is a electromechanical switch to control (open and close) any circuit. It is mainly used to control any circuit automatically using small Dc voltage to drive high voltage devices.
+A Relay is an electromechanical switch to control (open and close) any circuit. It is mainly used to control any circuit automatically using small Dc voltage to drive high voltage devices.
 
-Example : If you want to control your coffee maker with a simple Microcontroller, you can simply connect a relay and give digital commands.
+Example: If you want to control your coffee maker with a simple Microcontroller, you can simply connect a relay and give digital commands.
 
 <img src="{{ '/assets/img/Relay.gif' | prepend: site.baseurl }}" alt=""> 
-A normal SPDT DC relay have 5 pins, COM NC NO and a coil. Normally when no Voltage is applied on the relay coil NC (normally connected) pin and COM (Common) are in contact, when a DC voltage is applied according to desired rating of relay on it's coil a movable armature consist of spring support moves and NO (normally Open) pin are now in contact with COM. You can connect your load between COM pin and NO pin.
+A normal SPDT DC relay have 5 pins, COM NC NO and a coil. Normally when no Voltage is applied on the relay coil NC (normally connected) pin and COM (Common) are in contact, when a DC voltage is applied according to desired rating of relay on its coil a movable armature consist of spring support moves and NO (normally Open) pin are now in contact with COM. You can connect your load between COM pin and NO pin.
 
 For more details, please refer [this][Relay] blog on relays.
 
+#### Bootloader and flashing to Atmega328 using Arduino
+
+We are using atmega328 controller so we need to program it using Arduino as our board does not have USB uploading option. First thing is to upload bootloader on the chip then we can program the chip.
+
+<img src="{{ '/assets/img/AVR.png' | prepend: site.baseurl }}" alt=""> 
+
+To burn the bootloader, follow these steps:
+* Upload the ArduinoISP sketch onto your Arduino board. (You'll need to select the board and serial port from the Tools menu that correspond to your board in Arduino IDE.)
+* Wire up the Arduino board and microcontroller as shown in the diagram above.
+* Select "Arduino Duemilanove or Nano w/ ATmega328" from the Tools > Board menu. (Or "ATmega328 on a breadboard (8 MHz internal clock)" if using the minimal configuration described below.)
+* Select "Arduino as ISP" from Tools > Programmer
+* Run Tools > Burn Bootloader
+* You should only need to burn the bootloader once. After you've done so, you can remove the jumper wires connected to pins 10, 11, 12, and 13 of the Arduino board.
+
+### Uploading Using an Arduino Board
+
+Once you have uploaded the Arduino bootloader on it, you can upload the program by simply replacing the current controller of Arduino UNO with this new controller or you can use USB-to-Serial converter (FTDI Chip) on an Arduino board to program by simply connecting its RX and TX lines.
+
+Please refer [this][Boot] blog for more detail information about bootloading.
 
 #### Wiring to Atmega328
 
@@ -53,9 +72,34 @@ For more details, please refer the [schematics][Sch_GSM]. Download [Eagle][Eagle
 
 #### Working!
 
+Once you have designed and assembled your module you are ready to test it, insert your SIM card to GSM module and lock it and now power the module. Connect the Antenna and now wait for some time (say 1 minute) and see the blinking rate of ‘status LED’ or ‘network LED’. GSM module will take some time to establish connection with mobile networks. Once the connection is established successfully, the status/network LED will blink continuously every 3 seconds. You may try making a call to the mobile number of the sim card inside GSM module. If you hear a ring back, the GSM module has been successfully established the network connection.
 
+Now, your GSM module is working perfectly you are ready to code the microcontroller, insert the controller in arduino UNO and upload the code( Make sure you already had burned the bootloader). Take out the controller from UNO and place it inside your module and power it, once it establishes the network you will receive a confirmation message on your mobile number.
+
+We are using Atmega328P EEPROM which is 1024 bytes for logging the previous command received by the GSM module. You can now send "ON" message using your mobile phone to turn the Relay ON and send "OFF" to turn it OFF. After every successful command you will receive a feedback message from the module.
+
+### Code!
+
+{% highlight cpp %}
+#include <EEPROM.h>
+#include <SoftwareSerial.h>
+SoftwareSerial mySerialObj = SoftwareSerial(2,3); 
+SoftwareSerial *mySerial = &mySerialObj;
+
+int address = 0;                // EEPROM address to store flag 
+byte val;                       // 1 means ON , 0 means OFF
+
+#define RELAY_PIN 7             
+#define RELAY_STAT_PIN 6        // Relay Status Led
+const String PhoneNo = "Your_Mobile Number";
+const String Device_Name = "Basement Light";
+{% endhighlight %}
+
+[Download][code] the code.
 
 
 [Sch_GSM]: https://github.com/Farogh007/Projects/blob/master/EMBEDDED_PROJECTS/GSM_RELAY_MODULE/EAGLE_FILE/Schematic.pdf
 [Relay]: https://www.electronics-tutorials.ws/io/io_5.html
 [Eagle_GSM]: https://github.com/Farogh007/Projects/tree/master/EMBEDDED_PROJECTS/GSM_RELAY_MODULE/EAGLE_FILE
+[Boot]: https://www.arduino.cc/en/Tutorial/ArduinoToBreadboard
+[code]: https://github.com/Farogh007/Projects/blob/master/EMBEDDED_PROJECTS/GSM_RELAY_MODULE/GSM_CODE/GSM_CODE.ino

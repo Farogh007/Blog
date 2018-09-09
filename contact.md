@@ -10,7 +10,7 @@ title: Contact
     <p>Hope you like my posts, if you want any help in your projects feel free to contact.</p>
     <p>"There's a way to do it better- let's find it together"</p>
   </div>
-  <form action="http://formspree.io/your@mail.com" method="POST">
+  <form action="http://formspree.io/faroghblog@gmail.com" method="POST">
     <label for="name">Name</label>
     <input type="text" id="name" name="name" class="full-width"><br>
     <label for="email">Email Address</label>

@@ -8,7 +8,7 @@ title: Contact
   <div class="contactContent">
     <p class="intro">Hi there!<br/>Got any quesions/suggesions?</p>
     <p>Hope you like my posts, if you want any help in your projects feel free to contact.</p>
-    <p>"There's a way to do it better- let's find it together"</p>
+    <p>There's a Problem with this page Mailto@faroghblog@gmail.com</p>
   </div>
   <form action="http://formspree.io/faroghblog@gmail.com" method="POST">
     <label for="name">Name</label>

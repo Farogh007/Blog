@@ -4,6 +4,7 @@ var sass        = require('gulp-sass');
 var prefix      = require('gulp-autoprefixer');
 var cp          = require('child_process');
 var cssnano 		= require('gulp-cssnano');
+var pkg = require('./package.json');
 
 var jekyll   = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 var messages = {
@@ -67,3 +68,27 @@ gulp.task('watch', function () {
  * compile the jekyll site, launch BrowserSync & watch files.
  */
 gulp.task('default', ['browser-sync', 'watch']);
+
+
+// Copy third party libraries from /node_modules into /vendor
+gulp.task('vendor', function() {
+
+    // Bootstrap
+    gulp.src([
+        './node_modules/bootstrap/dist/**/*',
+        '!./node_modules/bootstrap/dist/css/bootstrap-grid*',
+        '!./node_modules/bootstrap/dist/css/bootstrap-reboot*'
+      ])
+      .pipe(gulp.dest('./vendor/bootstrap'))
+  
+    // jQuery
+    gulp.src([
+        './node_modules/jquery/dist/*',
+        '!./node_modules/jquery/dist/core.js'
+      ])
+      .pipe(gulp.dest('./vendor/jquery'))
+  
+  })
+  
+  // Default task
+  gulp.task('default', ['vendor']);

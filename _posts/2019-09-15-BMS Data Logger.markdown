@@ -24,7 +24,7 @@ The architecture is based on four major building blocks and using these we can m
 
 The logger will be attached to the BMS inside the car through CAN bus and the data will be transmitted to the mobile app via Bluetooth, which will give all the insights of a BMS. Then the Data will be sent to the cloud service where all the analytical part will be handled. Finally, the data will be displayed on a centrally managed dashboard, which will help the user to analyse the data and using these insights they can take some actions.
 
-<img src="{{ '/assets/img/CAN_layout.PNG' | prepend: site.baseurl }}" alt=""><center>Figure 2 Data Flow</center>
+<img src="{{ '/assets/img/layout.PNG' | prepend: site.baseurl }}" alt=""><center>Figure 2 Data Flow</center>
 
 #### Data Logger
 The device is based on SOC from NXP MKW35Z512VHT4. It is an ultra-low-power, highly integrated single-chip family that enables Bluetooth Low Energy version 5 and Generic FSK (at 250, 500 and 1000 kbps) connectivity for automotive, industrial and medical embedded systems. KW36/35 integrates an Arm® Cortex®-M0+ CPU, up to 512 KB Flash and 64 KB SRAM. It Support CAN which is directly interfaced with the TJA1057GT/3J and DB9 connector. The device will be powered with the BMS. It has unique serial id which will be used for device registration.

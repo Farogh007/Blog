@@ -2,7 +2,6 @@ title: Blog
 description: Blog for Electronics | Embedded | Firmware | Software
 
 url: https://farogh007.github.io
-url2: https://farogh007.github.io
 baseurl: "/Blog"
 #url: http://localhost:4000/
 #baseurl: ""
@@ -16,9 +15,7 @@ paginate: 5
 
 navigation:
  - title: Home
-   url2: /portfolio/
- - title: Blog
-   url: /index.html
+   url2: /index.html
 
 social:
    github: Farogh007
